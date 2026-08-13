@@ -149,55 +149,57 @@ const Projects = () => {
                         )}
                       </div>
 
-                      {/* Mockup Canvas — live site preview, click to open */}
-                      {project.liveUrl && project.liveUrl !== "#" ? (
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`Open live demo of ${project.title}`}
-                          className="h-[280px] relative overflow-hidden group block cursor-pointer bg-slate-900"
-                        >
-                          {/* Live embedded site */}
-                          <iframe
-                            src={project.liveUrl}
-                            title={`${project.title} live preview`}
-                            loading="lazy"
-                            tabIndex={-1}
-                            className="pointer-events-none absolute top-0 left-0 origin-top-left w-[250%] h-[250%] scale-[0.4] border-0"
-                          />
+                      {/* Mockup Canvas — live site preview, click to open, vertically centered in column */}
+                      <div className="flex-1 flex items-center justify-center py-6">
+                        {project.liveUrl && project.liveUrl !== "#" ? (
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`Open live demo of ${project.title}`}
+                            className="h-[280px] w-full relative overflow-hidden group block cursor-pointer bg-slate-900 shrink-0"
+                          >
+                            {/* Live embedded site */}
+                            <iframe
+                              src={project.liveUrl}
+                              title={`${project.title} live preview`}
+                              loading="lazy"
+                              tabIndex={-1}
+                              className="pointer-events-none absolute top-0 left-0 origin-top-left w-[250%] h-[250%] scale-[0.4] border-0"
+                            />
 
-                          {/* Click-to-visit overlay */}
-                          <div className="absolute inset-0 bg-slate-950/0 group-hover:bg-slate-950/60 transition-colors duration-300 flex items-center justify-center">
-                            <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2 bg-indigo-600 text-white text-xs sm:text-sm font-medium px-4 py-2 rounded-xl shadow-lg">
-                              <ExternalLink className="w-4 h-4" />
-                              <span>Visit live site</span>
+                            {/* Click-to-visit overlay */}
+                            <div className="absolute inset-0 bg-slate-950/0 group-hover:bg-slate-950/60 transition-colors duration-300 flex items-center justify-center">
+                              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2 bg-indigo-600 text-white text-xs sm:text-sm font-medium px-4 py-2 rounded-xl shadow-lg">
+                                <ExternalLink className="w-4 h-4" />
+                                <span>Visit live site</span>
+                              </div>
+                            </div>
+                          </a>
+                        ) : (
+                          <div className="p-8 h-[280px] w-full flex flex-col justify-center items-center bg-gradient-to-br from-slate-900 via-slate-950 to-indigo-950/40 relative overflow-hidden group shrink-0">
+                            {/* Decorative UI Cards in Preview (fallback when no live link) */}
+                            <div className="w-full max-w-sm space-y-3 opacity-40 group-hover:opacity-60 transition-opacity duration-300">
+                              <div className="h-5 bg-indigo-500/30 rounded-md w-3/4" />
+                              <div className="h-3 bg-slate-700/50 rounded-md w-1/2" />
+                              <div className="grid grid-cols-2 gap-3 pt-4">
+                                <div className="h-20 bg-slate-800/60 rounded-xl border border-slate-700/50" />
+                                <div className="h-20 bg-slate-800/60 rounded-xl border border-slate-700/50" />
+                              </div>
+                            </div>
+
+                            {/* Title Overlay on Canvas */}
+                            <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-slate-950/30 backdrop-blur-[2px]">
+                              <span className="font-mono text-xs text-indigo-400 uppercase tracking-widest mb-1">
+                                {project.subtitle}
+                              </span>
+                              <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight drop-shadow-md">
+                                {project.title}
+                              </h3>
                             </div>
                           </div>
-                        </a>
-                      ) : (
-                        <div className="p-8 h-[280px] flex flex-col justify-center items-center bg-gradient-to-br from-slate-900 via-slate-950 to-indigo-950/40 relative overflow-hidden group">
-                          {/* Decorative UI Cards in Preview (fallback when no live link) */}
-                          <div className="w-full max-w-sm space-y-3 opacity-40 group-hover:opacity-60 transition-opacity duration-300">
-                            <div className="h-5 bg-indigo-500/30 rounded-md w-3/4" />
-                            <div className="h-3 bg-slate-700/50 rounded-md w-1/2" />
-                            <div className="grid grid-cols-2 gap-3 pt-4">
-                              <div className="h-20 bg-slate-800/60 rounded-xl border border-slate-700/50" />
-                              <div className="h-20 bg-slate-800/60 rounded-xl border border-slate-700/50" />
-                            </div>
-                          </div>
-
-                          {/* Title Overlay on Canvas */}
-                          <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-slate-950/30 backdrop-blur-[2px]">
-                            <span className="font-mono text-xs text-indigo-400 uppercase tracking-widest mb-1">
-                              {project.subtitle}
-                            </span>
-                            <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight drop-shadow-md">
-                              {project.title}
-                            </h3>
-                          </div>
-                        </div>
-                      )}
+                        )}
+                      </div>
                     </div>
 
                     {/* Details Column */}
