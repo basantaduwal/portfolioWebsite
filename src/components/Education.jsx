@@ -46,7 +46,7 @@ const Education = () => {
               <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-slate-400 font-medium">
                 <div className="flex items-center gap-1.5">
                   <MapPin className="w-4 h-4 text-indigo-400" />
-                  <span>Nepal</span>
+                  <span>Techspire, Nepal</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <Calendar className="w-4 h-4 text-indigo-400" />
