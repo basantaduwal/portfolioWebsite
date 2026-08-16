@@ -1,16 +1,37 @@
-# React + Vite
+# Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A personal portfolio website built with React and Vite to showcase projects, skills, and experience.
 
-Currently, two official plugins are available:
+## Features
+- Responsive single-page layout
+- Sections for Hero, About, Experience, Education, Projects, Skills, and Contact
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
+- React
+- Vite
+- JavaScript
+- CSS
 
-## React Compiler
+## Get Started
+Install dependencies and start the dev server:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the Oxlint configuration
+Build for production and preview the build:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```bash
+npm run build
+npm run preview
+```
+
+## Project Structure
+- `src/` — application source
+- `src/components/` — React components (About, Contact, Experience, Projects, etc.)
+- `public/` — static assets
+
+## Contact
+Use the Contact section in the site or open an issue for questions or feedback.
+
