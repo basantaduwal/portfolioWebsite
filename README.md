@@ -33,4 +33,4 @@ npm run preview
 - `public/` — static assets
 
 ## Contact
-Use the Contact section in the site or open an issue for questions or feedback
+Use the Contact section in the site or open an issue for questions or feedback.
